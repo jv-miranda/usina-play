@@ -1,5 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar> </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon class="menu-icon" name="menu-outline"></ion-icon>
+    </ion-buttons>
+
+    <div class="logo-container">
+      <img src="assets/imgs/app_logo_processed_2.png" alt="App Logo" />
+    </div>
+
+    <ion-buttons slot="end">
+      <ion-button class="notification-button">
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">

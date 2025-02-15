@@ -7,5 +7,39 @@ ion-header {
 
   ion-toolbar {
     --background: var(--ion-color-pattern);
+    padding-inline: 15px;
+
+    .logo-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        height: 38px;
+        mix-blend-mode: multiply;
+      }
+    }
+
+    .notification-button {
+      background-color: var(--buttons);
+      border-radius: 50%;
+
+      ion-icon {
+        --icon-size: 15px;
+
+        color: #f07d07;
+        font-size: var(--icon-size);
+        width: var(--icon-size);
+      }
+    }
+
+    .menu-icon {
+      --icon-size: 30px;
+
+      width: var(--icon-size);
+      height: var(--icon-size);
+      font-size: var(--icon-size);
+    }
   }
 }
