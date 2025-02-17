@@ -41,24 +41,39 @@
 
 <ion-content class="page-content" [fullscreen]="true">
   <div class="container" id="container">
-    <div class="session">
-      <div class="head">
-        <div class="title">PERSONAL ONLINE</div>
-        <ion-icon name="add" class="pattern-icon"></ion-icon>
-      </div>
+    <div class="sections">
+      <div class="section" *ngFor="let section of sections | async">
+        <div class="head">
+          <div class="title">{{ section.name }}</div>
+          <ion-icon
+            *ngIf="section.icon_name"
+            [name]="section.icon_name"
+            class="pattern-icon"
+          ></ion-icon>
+        </div>
 
-      <swiper-container
-        slides-per-view="auto"
-        slides-offset-before="40"
-        space-between="20"
-      >
-        <swiper-slide *ngFor="let item of [1,1,1,1,1]">
-          <div class="img-content">
-            <div class="overlay">dklsnlkfn</div>
-            <img src="assets/imgs/workout-sample.jpg" alt="" />
-          </div>
-        </swiper-slide>
-      </swiper-container>
+        <swiper-container
+          slides-per-view="auto"
+          slides-offset-before="40"
+          slides-offset-after="40"
+          space-between="20"
+        >
+          <swiper-slide *ngFor="let item of section.items">
+            <div class="img-content">
+              <div class="overlay" *ngIf="item.overlay.enabled">
+                <div class="button">
+                  <ion-icon
+                    [name]="item.overlay.icon_name"
+                    class="pattern-icon overlay-icon"
+                  ></ion-icon>
+                  <p [innerHTML]="item.overlay.overlay_msg"></p>
+                </div>
+              </div>
+              <img [src]="item.img_url" alt="" />
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
     </div>
   </div>
 </ion-content>
