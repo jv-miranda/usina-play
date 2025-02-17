@@ -35,3 +35,44 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+@font-face {
+  font-family: "Bonnet Grotesque Nr DEMO";
+  src: url("assets/fonts/BonnetGrotesque-Regular.woff") format("woff2"),
+    url("assets/fonts/BonnetGrotesque-Regular.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Bonnet Grotesque Nr DEMO";
+  font-weight: normal;
+  font-style: normal;
+  color: var(--white);
+}
+
+p {
+  margin: 0;
+}
+
+.pattern-text {
+  color: var(--pattern-color-3);
+}
+
+.pattern-text-2 {
+  color: var(--pattern-color-4);
+}
+
+.page-content {
+  --background: var(--background);
+}
+
+ion-icon.pattern-icon {
+  border-radius: 50%;
+  padding: 2px;
+  width: 12px;
+  height: 12px;
+  font-size: 5px;
+  border: var(--pattern-color-5) 1px solid;
+  color: var(--pattern-color-5);
+}

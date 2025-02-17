@@ -14,8 +14,51 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+
+  <div class="user-info">
+    <img src="assets/imgs/person.png" alt="" />
+
+    <div class="text">
+      <div class="name pattern-text">Leonardo Santos</div>
+      <div class="level pattern-text-2">Nivel roxo</div>
+    </div>
+  </div>
+
+  <div class="buttons-container">
+    <div class="buttons">
+      <div class="button">
+        <ion-icon name="body" class="pattern-icon"></ion-icon>
+        <p>MEU CORPO</p>
+      </div>
+
+      <div class="button">
+        <ion-icon name="trophy" class="pattern-icon"></ion-icon>
+        <p>OBJETIVOS E CONQUISTAS</p>
+      </div>
+    </div>
+  </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div id="container"></div>
+<ion-content class="page-content" [fullscreen]="true">
+  <div class="container" id="container">
+    <div class="session">
+      <div class="head">
+        <div class="title">PERSONAL ONLINE</div>
+        <ion-icon name="add" class="pattern-icon"></ion-icon>
+      </div>
+
+      <swiper-container
+        slides-per-view="auto"
+        slides-offset-before="40"
+        space-between="20"
+      >
+        <swiper-slide *ngFor="let item of [1,1,1,1,1]">
+          <div class="img-content">
+            <div class="overlay">dklsnlkfn</div>
+            <img src="assets/imgs/workout-sample.jpg" alt="" />
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+  </div>
 </ion-content>
