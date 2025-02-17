@@ -11,6 +11,7 @@
     <ion-buttons slot="end">
       <ion-button class="notification-button">
         <ion-icon name="notifications"></ion-icon>
+        <div class="badge"></div>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -24,7 +25,7 @@
     </div>
   </div>
 
-  <div class="buttons-container">
+  <div class="buttons-container soft-shadow">
     <div class="buttons">
       <div class="button">
         <ion-icon name="body" class="pattern-icon"></ion-icon>
@@ -45,11 +46,14 @@
       <div class="section" *ngFor="let section of sections | async">
         <div class="head">
           <div class="title">{{ section.name }}</div>
+
           <ion-icon
             *ngIf="section.icon_name"
             [name]="section.icon_name"
             class="pattern-icon"
           ></ion-icon>
+
+          <div *ngIf="section.new" class="new-tag shiny-box">NOVO</div>
         </div>
 
         <swiper-container

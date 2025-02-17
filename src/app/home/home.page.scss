@@ -1,9 +1,24 @@
-ion-header {
-  --ion-header-border-radius: 40px;
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
 
-  background-color: var(--ion-color-pattern);
+@mixin header-border-radius($radius: 40px) {
+  --ion-header-border-radius: $radius;
   border-bottom-left-radius: var(--ion-header-border-radius);
   border-bottom-right-radius: var(--ion-header-border-radius);
+}
+
+@mixin icon-size($size) {
+  width: $size;
+  height: $size;
+  font-size: $size;
+}
+
+ion-header {
+  @include header-border-radius(40px);
+  background-color: var(--ion-color-pattern);
   overflow: hidden;
 
   ion-toolbar {
@@ -12,9 +27,7 @@ ion-header {
 
     .logo-container {
       flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center();
 
       img {
         height: 38px;
@@ -25,22 +38,26 @@ ion-header {
     .notification-button {
       background-color: var(--pattern-color-1);
       border-radius: 50%;
+      position: relative;
 
       ion-icon {
-        --icon-size: 15px;
-
+        @include icon-size(15px);
         color: var(--pattern-color-5);
-        font-size: var(--icon-size);
-        width: var(--icon-size);
+      }
+
+      .badge {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: var(--pattern-color-7);
+        border-radius: 50%;
+        top: -8px;
+        right: -8px;
       }
     }
 
     .menu-icon {
-      --icon-size: 30px;
-
-      width: var(--icon-size);
-      height: var(--icon-size);
-      font-size: var(--icon-size);
+      @include icon-size(30px);
     }
   }
 
@@ -61,7 +78,6 @@ ion-header {
       .name {
         font-size: 28px;
       }
-
       .level {
         font-size: 18px;
       }
@@ -80,16 +96,15 @@ ion-header {
       gap: 20px;
       border-radius: 20px;
       background-color: var(--pattern-color-2);
-      margin-bottom: 20px;
+      margin: 0 20px 20px;
       width: fit-content;
-      margin-inline: 20px;
     }
 
     .button {
       display: flex;
       align-items: center;
-      color: var(--pattern-color-5);
       gap: 5px;
+      color: var(--pattern-color-5);
     }
   }
 }
@@ -119,6 +134,15 @@ ion-content {
           ion-icon {
             width: 18px;
             height: 18px;
+          }
+
+          .new-tag {
+            margin-top: 6px;
+            align-self: flex-start;
+            background-color: var(--pattern-color-5);
+            font-size: 10px;
+            padding: 2px 5px;
+            border-radius: 10px;
           }
         }
 

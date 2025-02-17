@@ -49,6 +49,9 @@
   font-weight: normal;
   font-style: normal;
   color: var(--white);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 p {
@@ -75,4 +78,10 @@ ion-icon.pattern-icon {
   font-size: 5px;
   border: var(--pattern-color-5) 1px solid;
   color: var(--pattern-color-5);
+}
+
+.shiny-box {
+  box-shadow: 0 0 2px var(--pattern-color-5), 0 0 2px var(--pattern-color-5),
+    0 0 15px var(--pattern-color-6);
+  transition: box-shadow 0.3s ease-in-out;
 }
